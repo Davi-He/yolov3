@@ -1,0 +1,24 @@
+{
+    "name": "YOLOv3 Dev Container",
+    "image": "ultralytics/yolov3:latest",
+    "remoteUser": "root",
+    "extensions": [
+		"ms-python.python",
+		"VisualStudioExptTeam.vscodeintellicode"
+	],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintArgs": ["--disable=C0111"],
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "runArgs": [
+        "--gpus", "all"
+    ]
+}
