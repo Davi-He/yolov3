@@ -19,6 +19,9 @@
         "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
     ],
     "runArgs": [
-        "--gpus", "all"
-    ]
+        "--gpus", "all",
+        "--ipc=host",
+        "--network=host"
+    ],
+    "postCreateCommand": "apt-get update && apt-get install -y tree vim"
 }
